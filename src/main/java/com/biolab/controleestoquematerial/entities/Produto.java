@@ -13,20 +13,29 @@ public class Produto {
     private long id;
     private String nomeProduto;
     private double preco;
+    private String unidadeMedida;
+    private int quantidade;
+    private String categoria;
 
     public Produto() {
 
     }
 
-    public Produto(long id, String nomeProduto, double preco) {
+    public Produto(double preco, String nomeProduto, String unidadeMedida, int quantidade, String categoria) {
+        this.preco = preco;
+        this.nomeProduto = nomeProduto;
+        this.unidadeMedida = unidadeMedida;
+        this.quantidade = quantidade;
+        this.categoria = categoria;
+    }
+
+    public Produto(long id, String nomeProduto, double preco, String unidadeMedida, int quantidade, String categoria) {
         this.id = id;
         this.nomeProduto = nomeProduto;
         this.preco = preco;
-    }
-
-    public Produto(String nomeProduto, double preco) {
-        this.nomeProduto = nomeProduto;
-        this.preco = preco;
+        this.unidadeMedida = unidadeMedida;
+        this.quantidade = quantidade;
+        this.categoria = categoria;
     }
 
     public long getId() {
@@ -53,12 +62,40 @@ public class Produto {
         this.preco = preco;
     }
 
+    public String getUnidadeMedida() {
+        return unidadeMedida;
+    }
+
+    public void setUnidadeMedida(String unidadeMedida) {
+        this.unidadeMedida = unidadeMedida;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
         return "Produto{" +
                 "id=" + id +
                 ", nomeProduto='" + nomeProduto + '\'' +
                 ", preco=" + preco +
+                ", unidadeMedida='" + unidadeMedida + '\'' +
+                ", quantidade=" + quantidade +
+                ", categoria='" + categoria + '\'' +
                 '}';
     }
+
 }
